@@ -1,0 +1,1862 @@
+{
+ "generated": "2026-11-18T15:08:34.180838+00:00",
+ "site": [],
+ "pages": [
+  {
+   "url": "https://kabatone.com/",
+   "final": "https://kabatone.com/",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es",
+   "final": "https://kabatone.com/es",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/k-dispatch",
+   "final": "https://kabatone.com/k-dispatch",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/k-dispatch",
+   "final": "https://kabatone.com/es/k-dispatch",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/k-video",
+   "final": "https://kabatone.com/k-video",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/k-video",
+   "final": "https://kabatone.com/es/k-video",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/k-safety",
+   "final": "https://kabatone.com/k-safety",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/k-safety",
+   "final": "https://kabatone.com/es/k-safety",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/k-traffic",
+   "final": "https://kabatone.com/k-traffic",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/k-traffic",
+   "final": "https://kabatone.com/es/k-traffic",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/k-connect",
+   "final": "https://kabatone.com/k-connect",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/k-connect",
+   "final": "https://kabatone.com/es/k-connect",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/industries/public-safety",
+   "final": "https://kabatone.com/industries/public-safety",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/industries/public-safety",
+   "final": "https://kabatone.com/es/industries/public-safety",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/industries/municipalities",
+   "final": "https://kabatone.com/industries/municipalities",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/industries/municipalities",
+   "final": "https://kabatone.com/es/industries/municipalities",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/industries/airport",
+   "final": "https://kabatone.com/industries/airport",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/industries/airport",
+   "final": "https://kabatone.com/es/industries/airport",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/industries/retail",
+   "final": "https://kabatone.com/industries/retail",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/industries/retail",
+   "final": "https://kabatone.com/es/industries/retail",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/industries/logistics",
+   "final": "https://kabatone.com/industries/logistics",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/industries/logistics",
+   "final": "https://kabatone.com/es/industries/logistics",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/industries/ports",
+   "final": "https://kabatone.com/industries/ports",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/industries/ports",
+   "final": "https://kabatone.com/es/industries/ports",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/industries/stadiums",
+   "final": "https://kabatone.com/industries/stadiums",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/industries/stadiums",
+   "final": "https://kabatone.com/es/industries/stadiums",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/careers",
+   "final": "https://kabatone.com/careers",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/careers",
+   "final": "https://kabatone.com/es/careers",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/careers/tech-lead-next-generation-public-safety-platform",
+   "final": "https://kabatone.com/careers/tech-lead-next-generation-public-safety-platform",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/careers/tech-lead-next-generation-public-safety-platform",
+   "final": "https://kabatone.com/es/careers/tech-lead-next-generation-public-safety-platform",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources",
+   "final": "https://kabatone.com/resources",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources",
+   "final": "https://kabatone.com/es/resources",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/rtcc-setup-guide",
+   "final": "https://kabatone.com/resources/rtcc-setup-guide",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/rtcc-setup-guide",
+   "final": "https://kabatone.com/es/resources/rtcc-setup-guide",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Gu\u00eda para Implementar un Centro de Crimen en Tiempo Real (RT\" differs from H1 \"C\u00f3mo Implementar un Centro de Crimen en Tiempo Rea\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/ai-in-public-safety",
+   "final": "https://kabatone.com/resources/ai-in-public-safety",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/ai-in-public-safety",
+   "final": "https://kabatone.com/es/resources/ai-in-public-safety",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-a-public-safety-platform",
+   "final": "https://kabatone.com/resources/what-is-a-public-safety-platform",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is a Public Safety Platform? Definition & Guide\" differs from H1 \"What Is a Public Safety Platform?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-a-public-safety-platform",
+   "final": "https://kabatone.com/es/resources/what-is-a-public-safety-platform",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQue Es una Plataforma de Seguridad Publica? Definicion y Gu\" differs from H1 \"\u00bfQue Es una Plataforma de Seguridad Publica?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/psim-vs-unified-platform",
+   "final": "https://kabatone.com/resources/psim-vs-unified-platform",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/psim-vs-unified-platform",
+   "final": "https://kabatone.com/es/resources/psim-vs-unified-platform",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/how-c5-command-centers-work",
+   "final": "https://kabatone.com/resources/how-c5-command-centers-work",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/how-c5-command-centers-work",
+   "final": "https://kabatone.com/es/resources/how-c5-command-centers-work",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/que-es-un-c5",
+   "final": "https://kabatone.com/resources/que-es-un-c5",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"What Is a C5 Command Center? Command, Control, Computing, Communicatio\" not in visible text (38% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/que-es-un-c5",
+   "final": "https://kabatone.com/es/resources/que-es-un-c5",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"\u00bfQu\u00e9 es un C5? Centro de Comando, Control, C\u00f3mputo, Comunicaciones y C\" not in visible text (38% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/norma-tecnica-911",
+   "final": "https://kabatone.com/resources/norma-tecnica-911",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Mexico's 911 Technical Standard: CAD requirements\" not in visible text (50% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/norma-tecnica-911",
+   "final": "https://kabatone.com/es/resources/norma-tecnica-911",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Norma T\u00e9cnica 9-1-1: requisitos para el sistema CAD\" differs from H1 \"Norma T\u00e9cnica 9-1-1: lo que exige al CAD\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/anexo-tecnico-cad-911",
+   "final": "https://kabatone.com/resources/anexo-tecnico-cad-911",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/anexo-tecnico-cad-911",
+   "final": "https://kabatone.com/es/resources/anexo-tecnico-cad-911",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/fasp-2027-911-c5",
+   "final": "https://kabatone.com/resources/fasp-2027-911-c5",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/fasp-2027-911-c5",
+   "final": "https://kabatone.com/es/resources/fasp-2027-911-c5",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/estadisticas-911-mexico-2026",
+   "final": "https://kabatone.com/resources/estadisticas-911-mexico-2026",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/estadisticas-911-mexico-2026",
+   "final": "https://kabatone.com/es/resources/estadisticas-911-mexico-2026",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/police-cad-software",
+   "final": "https://kabatone.com/resources/police-cad-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/police-cad-software",
+   "final": "https://kabatone.com/es/resources/police-cad-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/fire-ems-dispatch-software",
+   "final": "https://kabatone.com/resources/fire-ems-dispatch-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/fire-ems-dispatch-software",
+   "final": "https://kabatone.com/es/resources/fire-ems-dispatch-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/smart-city-platform-guide",
+   "final": "https://kabatone.com/resources/smart-city-platform-guide",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/smart-city-platform-guide",
+   "final": "https://kabatone.com/es/resources/smart-city-platform-guide",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-municipalities-mexico",
+   "final": "https://kabatone.com/resources/public-safety-software-municipalities-mexico",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-municipalities-mexico",
+   "final": "https://kabatone.com/es/resources/public-safety-software-municipalities-mexico",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/end-of-siloed-response",
+   "final": "https://kabatone.com/resources/end-of-siloed-response",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/end-of-siloed-response",
+   "final": "https://kabatone.com/es/resources/end-of-siloed-response",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-cad-dispatch-software",
+   "final": "https://kabatone.com/resources/what-is-cad-dispatch-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is CAD Dispatch Software? A Guide for Public Safety Age\" differs from H1 \"What Is CAD Dispatch Software?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-cad-dispatch-software",
+   "final": "https://kabatone.com/es/resources/what-is-cad-dispatch-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es el Software CAD de Despacho? Gu\u00eda para Agencias de S\" differs from H1 \"\u00bfQu\u00e9 Es el Software CAD de Despacho?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/video-management-public-safety-guide",
+   "final": "https://kabatone.com/resources/video-management-public-safety-guide",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/video-management-public-safety-guide",
+   "final": "https://kabatone.com/es/resources/video-management-public-safety-guide",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-video-management-software",
+   "final": "https://kabatone.com/resources/what-is-video-management-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is Video Management Software (VMS)? A Guide for Public \" differs from H1 \"VMS: What Is a Video Management System for Public \""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-video-management-software",
+   "final": "https://kabatone.com/es/resources/what-is-video-management-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es el Software de Gesti\u00f3n de Video (VMS)? Gu\u00eda para Seg\" differs from H1 \"VMS: \u00bfQu\u00e9 Es un Sistema de Gesti\u00f3n de Video para S\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-a-real-time-crime-center",
+   "final": "https://kabatone.com/resources/what-is-a-real-time-crime-center",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is a Real-Time Crime Center (RTCC)? Complete Guide\" differs from H1 \"What Is a Real-Time Crime Center?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-a-real-time-crime-center",
+   "final": "https://kabatone.com/es/resources/what-is-a-real-time-crime-center",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es un Centro de Crimen en Tiempo Real (RTCC)? Gu\u00eda Comp\" differs from H1 \"\u00bfQu\u00e9 Es un Centro de Crimen en Tiempo Real?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-situational-awareness-software",
+   "final": "https://kabatone.com/resources/what-is-situational-awareness-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is Situational Awareness Software? Guide for Command Ce\" differs from H1 \"What Is Situational Awareness Software?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-situational-awareness-software",
+   "final": "https://kabatone.com/es/resources/what-is-situational-awareness-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es el Software de Conciencia Situacional? Gu\u00eda para Cen\" differs from H1 \"\u00bfQu\u00e9 Es un Software de Conciencia Situacional?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-gunshot-detection-software",
+   "final": "https://kabatone.com/resources/what-is-gunshot-detection-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is Gunshot Detection Software? Complete Guide\" differs from H1 \"What Is Gunshot Detection Software?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-gunshot-detection-software",
+   "final": "https://kabatone.com/es/resources/what-is-gunshot-detection-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es un Software de Detecci\u00f3n de Disparos? Gu\u00eda Completa\" differs from H1 \"\u00bfQu\u00e9 Es un Software de Detecci\u00f3n de Disparos?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-a-command-center",
+   "final": "https://kabatone.com/resources/what-is-a-command-center",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is a Command Center? C2\u2013C5 Guide for Public Safety\" differs from H1 \"What Is a Command Center?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-a-command-center",
+   "final": "https://kabatone.com/es/resources/what-is-a-command-center",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es un Centro de Mando? Gu\u00eda C2\u2013C5 para Seguridad P\u00fablic\" differs from H1 \"\u00bfQu\u00e9 Es un Centro de Mando?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-emergency-management-software",
+   "final": "https://kabatone.com/resources/what-is-emergency-management-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is Emergency Management Software? Complete Guide\" differs from H1 \"What Is Emergency Management Software?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-emergency-management-software",
+   "final": "https://kabatone.com/es/resources/what-is-emergency-management-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es un Software de Gesti\u00f3n de Emergencias? Gu\u00eda Completa\" differs from H1 \"\u00bfQu\u00e9 Es un Software de Gesti\u00f3n de Emergencias?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-a-psap",
+   "final": "https://kabatone.com/resources/what-is-a-psap",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is a PSAP? Guide to Public Safety Answering Points\" differs from H1 \"What Is a PSAP?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-a-psap",
+   "final": "https://kabatone.com/es/resources/what-is-a-psap",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es un PSAP? Gu\u00eda sobre Centros de Recepci\u00f3n de Emergenc\" differs from H1 \"\u00bfQu\u00e9 Es un PSAP?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-emergency-dispatch-software",
+   "final": "https://kabatone.com/resources/what-is-emergency-dispatch-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-emergency-dispatch-software",
+   "final": "https://kabatone.com/es/resources/what-is-emergency-dispatch-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-lpr-license-plate-recognition",
+   "final": "https://kabatone.com/resources/what-is-lpr-license-plate-recognition",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition",
+   "final": "https://kabatone.com/es/resources/what-is-lpr-license-plate-recognition",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/cctv-video-analytics",
+   "final": "https://kabatone.com/resources/cctv-video-analytics",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"CCTV Video Analytics: AI for Existing Surveillance Cameras\" differs from H1 \"CCTV Video Analytics: AI for Your Existing Surveil\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/cctv-video-analytics",
+   "final": "https://kabatone.com/es/resources/cctv-video-analytics",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Anal\u00edtica de Video CCTV: IA para C\u00e1maras de Vigilancia Exist\" differs from H1 \"Anal\u00edtica de Video CCTV: IA para tus C\u00e1maras de Vi\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/best-vms-software",
+   "final": "https://kabatone.com/resources/best-vms-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/best-vms-software",
+   "final": "https://kabatone.com/es/resources/best-vms-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Mejor Software VMS: Gu\u00eda para Elegir una Plataforma de Gesti\" differs from H1 \"Mejor Software VMS: C\u00f3mo Elegir una Plataforma de \""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/genetec-alternatives",
+   "final": "https://kabatone.com/resources/genetec-alternatives",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/genetec-alternatives",
+   "final": "https://kabatone.com/es/resources/genetec-alternatives",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/milestone-alternatives",
+   "final": "https://kabatone.com/resources/milestone-alternatives",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/milestone-alternatives",
+   "final": "https://kabatone.com/es/resources/milestone-alternatives",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/best-ai-video-analytics-software",
+   "final": "https://kabatone.com/resources/best-ai-video-analytics-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/best-ai-video-analytics-software",
+   "final": "https://kabatone.com/es/resources/best-ai-video-analytics-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/best-ng911-software",
+   "final": "https://kabatone.com/resources/best-ng911-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/best-ng911-software",
+   "final": "https://kabatone.com/es/resources/best-ng911-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/psim-alternatives",
+   "final": "https://kabatone.com/resources/psim-alternatives",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/psim-alternatives",
+   "final": "https://kabatone.com/es/resources/psim-alternatives",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/rtcc-software",
+   "final": "https://kabatone.com/resources/rtcc-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/rtcc-software",
+   "final": "https://kabatone.com/es/resources/rtcc-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-sensor-fusion",
+   "final": "https://kabatone.com/resources/what-is-sensor-fusion",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-sensor-fusion",
+   "final": "https://kabatone.com/es/resources/what-is-sensor-fusion",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/c5-command-centers-mexico-2026",
+   "final": "https://kabatone.com/resources/c5-command-centers-mexico-2026",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"C5 command center platform: software requirements for Mexico\" not in visible text (56% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/c5-command-centers-mexico-2026",
+   "final": "https://kabatone.com/es/resources/c5-command-centers-mexico-2026",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Plataforma para C5: qu\u00e9 debe tener el software de un centro \" differs from H1 \"Plataforma para C5: qu\u00e9 debe tener el software\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/cad-software-municipios-mexico",
+   "final": "https://kabatone.com/resources/cad-software-municipios-mexico",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"CAD Software for Mexico Municipalities: 911 Dispatch Guide\" differs from H1 \"CAD Software for Mexico Municipalities\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/cad-software-municipios-mexico",
+   "final": "https://kabatone.com/es/resources/cad-software-municipios-mexico",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software CAD para Municipios de M\u00e9xico: Gu\u00eda de Despacho 911\" differs from H1 \"Software CAD para Municipios de M\u00e9xico\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/what-is-incident-management-software",
+   "final": "https://kabatone.com/resources/what-is-incident-management-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"What Is Incident Management Software? Public Safety Guide | \" differs from H1 \"What Is Incident Management Software?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/what-is-incident-management-software",
+   "final": "https://kabatone.com/es/resources/what-is-incident-management-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"\u00bfQu\u00e9 Es un Software de Gesti\u00f3n de Incidentes? Gu\u00eda de Seguri\" differs from H1 \"\u00bfQu\u00e9 Es un Software de Gesti\u00f3n de Incidentes?\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/911-call-center-software-guide",
+   "final": "https://kabatone.com/resources/911-call-center-software-guide",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/911-call-center-software-guide",
+   "final": "https://kabatone.com/es/resources/911-call-center-software-guide",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software para Centro de Llamadas 911: Gu\u00eda de Selecci\u00f3n | Ka\" differs from H1 \"Software para Centros de Llamadas 911: Gu\u00eda de Sel\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/best-public-safety-software",
+   "final": "https://kabatone.com/resources/best-public-safety-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/best-public-safety-software",
+   "final": "https://kabatone.com/es/resources/best-public-safety-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/build-rtcc-implementation-guide",
+   "final": "https://kabatone.com/resources/build-rtcc-implementation-guide",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"How to Build a Real-Time Crime Center: RTCC Guide | Kabat On\" differs from H1 \"How to Build a Real-Time Crime Center\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/build-rtcc-implementation-guide",
+   "final": "https://kabatone.com/es/resources/build-rtcc-implementation-guide",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Gu\u00eda de Implementaci\u00f3n de un RTCC para Gobiernos | Kabat One\" not in visible text (20% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-colombia",
+   "final": "https://kabatone.com/resources/public-safety-software-colombia",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Colombia: Government Guide\" differs from H1 \"Public Safety Software for Colombia\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-colombia",
+   "final": "https://kabatone.com/es/resources/public-safety-software-colombia",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios en Colombia\" differs from H1 \"Software de Seguridad Publica para Colombia\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/linea-123-software",
+   "final": "https://kabatone.com/resources/linea-123-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/linea-123-software",
+   "final": "https://kabatone.com/es/resources/linea-123-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/911-chile-sinaproc",
+   "final": "https://kabatone.com/resources/911-chile-sinaproc",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/911-chile-sinaproc",
+   "final": "https://kabatone.com/es/resources/911-chile-sinaproc",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/sistema-911-argentina",
+   "final": "https://kabatone.com/resources/sistema-911-argentina",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/sistema-911-argentina",
+   "final": "https://kabatone.com/es/resources/sistema-911-argentina",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/ecu-911-modernizacion",
+   "final": "https://kabatone.com/resources/ecu-911-modernizacion",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/ecu-911-modernizacion",
+   "final": "https://kabatone.com/es/resources/ecu-911-modernizacion",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-peru",
+   "final": "https://kabatone.com/resources/public-safety-software-peru",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Peru: Government Guide\" differs from H1 \"Public Safety Software for Peru\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-peru",
+   "final": "https://kabatone.com/es/resources/public-safety-software-peru",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios en Peru\" differs from H1 \"Software de Seguridad Publica para Peru\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-small-cities",
+   "final": "https://kabatone.com/resources/public-safety-software-small-cities",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-small-cities",
+   "final": "https://kabatone.com/es/resources/public-safety-software-small-cities",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-chile",
+   "final": "https://kabatone.com/resources/public-safety-software-chile",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Chile: Government Guide\" differs from H1 \"Public Safety Software for Chile\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-chile",
+   "final": "https://kabatone.com/es/resources/public-safety-software-chile",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios en Chile\" differs from H1 \"Software de Seguridad Publica para Chile\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-argentina",
+   "final": "https://kabatone.com/resources/public-safety-software-argentina",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Argentina: Government Guide\" differs from H1 \"Public Safety Software for Argentina\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-argentina",
+   "final": "https://kabatone.com/es/resources/public-safety-software-argentina",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Provincias e\" differs from H1 \"Software de Seguridad Publica para Argentina\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-brazil",
+   "final": "https://kabatone.com/resources/public-safety-software-brazil",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Brazil: Government Guide\" differs from H1 \"Public Safety Software for Brazil\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-brazil",
+   "final": "https://kabatone.com/es/resources/public-safety-software-brazil",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Estados de B\" differs from H1 \"Software de Seguridad Publica para Brasil\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/best-cad-dispatch-software",
+   "final": "https://kabatone.com/resources/best-cad-dispatch-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Best CAD Dispatch Software for 911 Centers in 2026\" differs from H1 \"Best CAD Dispatch Software (Computer-Aided Dispatc\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/best-cad-dispatch-software",
+   "final": "https://kabatone.com/es/resources/best-cad-dispatch-software",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Mejor Software CAD de Despacho para Centros 911 en 2026\" differs from H1 \"Mejor Software CAD de Despacho (Despacho Asistido \""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/video-analytics-use-cases",
+   "final": "https://kabatone.com/resources/video-analytics-use-cases",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/video-analytics-use-cases",
+   "final": "https://kabatone.com/es/resources/video-analytics-use-cases",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-united-states",
+   "final": "https://kabatone.com/resources/public-safety-software-united-states",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for US Cities: Command Centers, 911 &\" differs from H1 \"Public Safety Software for US Cities and Agencies\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-united-states",
+   "final": "https://kabatone.com/es/resources/public-safety-software-united-states",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad P\u00fablica para Ciudades de EE.UU.: Gu\u00eda \" differs from H1 \"Software de Seguridad P\u00fablica para Ciudades de EE.\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-canada",
+   "final": "https://kabatone.com/resources/public-safety-software-canada",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Canada: NG911, PSAP Dispatch, and\" differs from H1 \"Public Safety Software for Canadian Agencies\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-canada",
+   "final": "https://kabatone.com/es/resources/public-safety-software-canada",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad P\u00fablica para Canad\u00e1: NG911, PSAP y Coo\" differs from H1 \"Software de Seguridad P\u00fablica para Agencias Canadi\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-mexico",
+   "final": "https://kabatone.com/resources/public-safety-software-mexico",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Mexico: SSPC/Guardia Nacional, SI\" differs from H1 \"Public Safety Software for Mexico\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-mexico",
+   "final": "https://kabatone.com/es/resources/public-safety-software-mexico",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad P\u00fablica para M\u00e9xico: SSPC/Guardia Naci\" differs from H1 \"Software de Seguridad P\u00fablica para M\u00e9xico\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-guatemala",
+   "final": "https://kabatone.com/resources/public-safety-software-guatemala",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Guatemala: Government Guide\" differs from H1 \"Public Safety Software for Guatemala\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-guatemala",
+   "final": "https://kabatone.com/es/resources/public-safety-software-guatemala",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Departamento\" differs from H1 \"Software de Seguridad Publica para Guatemala\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-honduras",
+   "final": "https://kabatone.com/resources/public-safety-software-honduras",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Honduras: Government Guide\" differs from H1 \"Public Safety Software for Honduras\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-honduras",
+   "final": "https://kabatone.com/es/resources/public-safety-software-honduras",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Departamento\" differs from H1 \"Software de Seguridad Publica para Honduras\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-nicaragua",
+   "final": "https://kabatone.com/resources/public-safety-software-nicaragua",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Nicaragua: Government Guide\" differs from H1 \"Public Safety Software for Nicaragua\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-nicaragua",
+   "final": "https://kabatone.com/es/resources/public-safety-software-nicaragua",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Departamento\" differs from H1 \"Software de Seguridad Publica para Nicaragua\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-el-salvador",
+   "final": "https://kabatone.com/resources/public-safety-software-el-salvador",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for El Salvador: Government Guide\" differs from H1 \"Public Safety Software for El Salvador\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-el-salvador",
+   "final": "https://kabatone.com/es/resources/public-safety-software-el-salvador",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Departamento\" differs from H1 \"Software de Seguridad Publica para El Salvador\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-costa-rica",
+   "final": "https://kabatone.com/resources/public-safety-software-costa-rica",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Costa Rica: Government Guide\" differs from H1 \"Public Safety Software for Costa Rica\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-costa-rica",
+   "final": "https://kabatone.com/es/resources/public-safety-software-costa-rica",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Cantones en \" differs from H1 \"Software de Seguridad Publica para Costa Rica\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-ecuador",
+   "final": "https://kabatone.com/resources/public-safety-software-ecuador",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Ecuador: Government Guide\" differs from H1 \"Public Safety Software for Ecuador\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-ecuador",
+   "final": "https://kabatone.com/es/resources/public-safety-software-ecuador",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Cantones en \" differs from H1 \"Software de Seguridad Publica para Ecuador\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-panama",
+   "final": "https://kabatone.com/resources/public-safety-software-panama",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Panama: Government Guide\" differs from H1 \"Public Safety Software for Panama\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-panama",
+   "final": "https://kabatone.com/es/resources/public-safety-software-panama",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Provincias d\" differs from H1 \"Software de Seguridad Publica para Panama\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-dominican-republic",
+   "final": "https://kabatone.com/resources/public-safety-software-dominican-republic",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for the Dominican Republic: Governmen\" differs from H1 \"Public Safety Software for the Dominican Republic\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-dominican-republic",
+   "final": "https://kabatone.com/es/resources/public-safety-software-dominican-republic",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Provincias d\" differs from H1 \"Software de Seguridad Publica para la Republica Do\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-trinidad-and-tobago",
+   "final": "https://kabatone.com/resources/public-safety-software-trinidad-and-tobago",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Trinidad and Tobago: Government G\" differs from H1 \"Public Safety Software for Trinidad and Tobago\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-trinidad-and-tobago",
+   "final": "https://kabatone.com/es/resources/public-safety-software-trinidad-and-tobago",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios y Corporacione\" differs from H1 \"Software de Seguridad Publica para Trinidad y Toba\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-guyana",
+   "final": "https://kabatone.com/resources/public-safety-software-guyana",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Guyana: Government Guide\" differs from H1 \"Public Safety Software for Guyana\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-guyana",
+   "final": "https://kabatone.com/es/resources/public-safety-software-guyana",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Guyana: Guia Gubernamenta\" differs from H1 \"Software de Seguridad Publica para Guyana\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-puerto-rico",
+   "final": "https://kabatone.com/resources/public-safety-software-puerto-rico",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Puerto Rico: Government Guide\" differs from H1 \"Public Safety Software for Puerto Rico\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-puerto-rico",
+   "final": "https://kabatone.com/es/resources/public-safety-software-puerto-rico",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software de Seguridad Publica para Municipios de Puerto Rico\" differs from H1 \"Software de Seguridad Publica para Puerto Rico\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/resources/ng911-software",
+   "final": "https://kabatone.com/resources/ng911-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/resources/ng911-software",
+   "final": "https://kabatone.com/es/resources/ng911-software",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-venezuela",
+   "final": "https://kabatone.com/resources/public-safety-software-venezuela",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Venezuela: PNB, CICPC, FANB and P\" differs from H1 \"Public Safety Software for Venezuela\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-venezuela",
+   "final": "https://kabatone.com/es/resources/public-safety-software-venezuela",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-bolivia",
+   "final": "https://kabatone.com/resources/public-safety-software-bolivia",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Bolivia: Bolivian National Police\" differs from H1 \"Public Safety Software for Bolivia\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-bolivia",
+   "final": "https://kabatone.com/es/resources/public-safety-software-bolivia",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-uruguay",
+   "final": "https://kabatone.com/resources/public-safety-software-uruguay",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Uruguay: National Police, Smart C\" differs from H1 \"Public Safety Software for Uruguay\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-uruguay",
+   "final": "https://kabatone.com/es/resources/public-safety-software-uruguay",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-paraguay",
+   "final": "https://kabatone.com/resources/public-safety-software-paraguay",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Paraguay: National Police, SENAD,\" differs from H1 \"Public Safety Software for Paraguay\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-paraguay",
+   "final": "https://kabatone.com/es/resources/public-safety-software-paraguay",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/public-safety-software-suriname",
+   "final": "https://kabatone.com/resources/public-safety-software-suriname",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Public Safety Software for Suriname: KPS, Port Paramaribo Na\" differs from H1 \"Public Safety Software for Suriname\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/public-safety-software-suriname",
+   "final": "https://kabatone.com/es/resources/public-safety-software-suriname",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/resources/cad-dispatch-software-latin-america",
+   "final": "https://kabatone.com/resources/cad-dispatch-software-latin-america",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"CAD Dispatch Software for Latin America: Emergency Response \" differs from H1 \"CAD Dispatch Software for Latin America\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/resources/cad-dispatch-software-latin-america",
+   "final": "https://kabatone.com/es/resources/cad-dispatch-software-latin-america",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "WARN",
+     "msg": "Article headline \"Software CAD de Despacho para Am\u00e9rica Latina: Gu\u00eda de Centro\" differs from H1 \"Software CAD de Despacho para Am\u00e9rica Latina\""
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/integrations/lpr",
+   "final": "https://kabatone.com/integrations/lpr",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"License Plate Recognition (LPR) Integration\" not in visible text (33% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/integrations/lpr",
+   "final": "https://kabatone.com/es/integrations/lpr",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Integraci\u00f3n de Reconocimiento de Placas Vehiculares (LPR)\" not in visible text (50% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/integrations/face-recognition",
+   "final": "https://kabatone.com/integrations/face-recognition",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Facial Recognition Integration for Public Safety\" not in visible text (29% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/integrations/face-recognition",
+   "final": "https://kabatone.com/es/integrations/face-recognition",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Integraci\u00f3n de Reconocimiento Facial para Seguridad P\u00fablica\" not in visible text (27% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/integrations/sensor-fusion",
+   "final": "https://kabatone.com/integrations/sensor-fusion",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Sensor Fusion Platform for Public Safety\" not in visible text (25% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/integrations/sensor-fusion",
+   "final": "https://kabatone.com/es/integrations/sensor-fusion",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Fusi\u00f3n de Sensores para Seguridad P\u00fablica\" not in visible text (40% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/integrations/access-control",
+   "final": "https://kabatone.com/integrations/access-control",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Access Control Integration for Public Safety\" not in visible text (38% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/integrations/access-control",
+   "final": "https://kabatone.com/es/integrations/access-control",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Integraci\u00f3n de Control de Acceso para Seguridad P\u00fablica\" not in visible text (33% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/integrations/drones",
+   "final": "https://kabatone.com/integrations/drones",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Drone (UAV/UAS) Integration for Public Safety\" not in visible text (25% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/integrations/drones",
+   "final": "https://kabatone.com/es/integrations/drones",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Integraci\u00f3n de Drones (UAV/UAS) para Seguridad P\u00fablica\" not in visible text (33% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/integrations/panic-buttons",
+   "final": "https://kabatone.com/integrations/panic-buttons",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Panic Button Integration for Public Safety\" not in visible text (17% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/integrations/panic-buttons",
+   "final": "https://kabatone.com/es/integrations/panic-buttons",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Integraci\u00f3n de Botones de P\u00e1nico para Seguridad P\u00fablica\" not in visible text (50% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/vs/genetec",
+   "final": "https://kabatone.com/vs/genetec",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/genetec",
+   "final": "https://kabatone.com/es/vs/genetec",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/milestone",
+   "final": "https://kabatone.com/vs/milestone",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/milestone",
+   "final": "https://kabatone.com/es/vs/milestone",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/vms",
+   "final": "https://kabatone.com/vs/vms",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/vms",
+   "final": "https://kabatone.com/es/vs/vms",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/motorola",
+   "final": "https://kabatone.com/vs/motorola",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/motorola",
+   "final": "https://kabatone.com/es/vs/motorola",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/hexagon",
+   "final": "https://kabatone.com/vs/hexagon",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/hexagon",
+   "final": "https://kabatone.com/es/vs/hexagon",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/mark43",
+   "final": "https://kabatone.com/vs/mark43",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/mark43",
+   "final": "https://kabatone.com/es/vs/mark43",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/axon",
+   "final": "https://kabatone.com/vs/axon",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/axon",
+   "final": "https://kabatone.com/es/vs/axon",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/carbyne",
+   "final": "https://kabatone.com/vs/carbyne",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/carbyne",
+   "final": "https://kabatone.com/es/vs/carbyne",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/zetron",
+   "final": "https://kabatone.com/vs/zetron",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/zetron",
+   "final": "https://kabatone.com/es/vs/zetron",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/cad",
+   "final": "https://kabatone.com/vs/cad",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/cad",
+   "final": "https://kabatone.com/es/vs/cad",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/fusus",
+   "final": "https://kabatone.com/vs/fusus",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/fusus",
+   "final": "https://kabatone.com/es/vs/fusus",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/prepared911",
+   "final": "https://kabatone.com/vs/prepared911",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/prepared911",
+   "final": "https://kabatone.com/es/vs/prepared911",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/peregrine",
+   "final": "https://kabatone.com/vs/peregrine",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/peregrine",
+   "final": "https://kabatone.com/es/vs/peregrine",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/rapidssos",
+   "final": "https://kabatone.com/vs/rapidssos",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/rapidssos",
+   "final": "https://kabatone.com/es/vs/rapidssos",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/avigilon",
+   "final": "https://kabatone.com/vs/avigilon",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/avigilon",
+   "final": "https://kabatone.com/es/vs/avigilon",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/verkada",
+   "final": "https://kabatone.com/vs/verkada",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/verkada",
+   "final": "https://kabatone.com/es/vs/verkada",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/verint",
+   "final": "https://kabatone.com/vs/verint",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/verint",
+   "final": "https://kabatone.com/es/vs/verint",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/nice-systems",
+   "final": "https://kabatone.com/vs/nice-systems",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Kabat One vs NICE Systems (Qognify) \u2014 Public Safety Platform Compariso\" not in visible text (56% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/es/vs/nice-systems",
+   "final": "https://kabatone.com/es/vs/nice-systems",
+   "results": [
+    {
+     "check": "G-SD-VISIBLE",
+     "level": "FAIL",
+     "msg": "Article \"Kabat One vs NICE Systems (Qognify) \u2014 Comparaci\u00f3n de Plataformas de Se\" not in visible text (45% of H1 words)"
+    }
+   ]
+  },
+  {
+   "url": "https://kabatone.com/vs/tyler-technologies",
+   "final": "https://kabatone.com/vs/tyler-technologies",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/tyler-technologies",
+   "final": "https://kabatone.com/es/vs/tyler-technologies",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/centralsquare",
+   "final": "https://kabatone.com/vs/centralsquare",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/centralsquare",
+   "final": "https://kabatone.com/es/vs/centralsquare",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/shotspotter",
+   "final": "https://kabatone.com/vs/shotspotter",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/shotspotter",
+   "final": "https://kabatone.com/es/vs/shotspotter",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/vs/palantir",
+   "final": "https://kabatone.com/vs/palantir",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/vs/palantir",
+   "final": "https://kabatone.com/es/vs/palantir",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/about",
+   "final": "https://kabatone.com/about",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/about",
+   "final": "https://kabatone.com/es/about",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/contact",
+   "final": "https://kabatone.com/contact",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/contact",
+   "final": "https://kabatone.com/es/contact",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/privacy",
+   "final": "https://kabatone.com/privacy",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/privacy",
+   "final": "https://kabatone.com/es/privacy",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/simulator",
+   "final": "https://kabatone.com/simulator",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/simulator",
+   "final": "https://kabatone.com/es/simulator",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/demo",
+   "final": "https://kabatone.com/demo",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/demo",
+   "final": "https://kabatone.com/es/demo",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/demo/lpr",
+   "final": "https://kabatone.com/demo/lpr",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/demo/lpr",
+   "final": "https://kabatone.com/es/demo/lpr",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/demo/school",
+   "final": "https://kabatone.com/demo/school",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/demo/school",
+   "final": "https://kabatone.com/es/demo/school",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/demo/violence",
+   "final": "https://kabatone.com/demo/violence",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/demo/violence",
+   "final": "https://kabatone.com/es/demo/violence",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/demo/medical",
+   "final": "https://kabatone.com/demo/medical",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/demo/medical",
+   "final": "https://kabatone.com/es/demo/medical",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/demo/access-control",
+   "final": "https://kabatone.com/demo/access-control",
+   "results": []
+  },
+  {
+   "url": "https://kabatone.com/es/demo/access-control",
+   "final": "https://kabatone.com/es/demo/access-control",
+   "results": []
+  }
+ ]
+}
