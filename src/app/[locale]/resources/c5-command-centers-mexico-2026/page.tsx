@@ -106,7 +106,7 @@ export default async function C5CommandCentersMexico2026Page({
 
   /* ── Schema ── */
   const artSchema = articleSchema(
-    es ? 'Plataforma para C5: qué debe tener el software de un centro C5' : 'C5 command center platform: software requirements for Mexico',
+    es ? 'Plataforma para C5: qué debe tener el software' : 'C5 Command Center Platform: What the Software Must Do',
     es
       ? 'Los centros C5 coordinan policía, bomberos, EMS y videovigilancia en ciudades mexicanas. Guía completa 2026: tecnología, software, retos de integración y cómo las plataformas unificadas mejoran los tiempos de respuesta.'
       : 'C5 command centers coordinate police, fire, EMS, and surveillance across Mexican cities. Complete 2026 guide to technology stack, software requirements, and how unified platforms improve response.',

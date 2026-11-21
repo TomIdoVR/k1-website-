@@ -86,7 +86,7 @@ export default async function QueEsUnC5Page({ params }: { params: Promise<{ loca
   ]
 
   const article = articleSchema(
-    es ? '¿Qué es un C5? Centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano' : 'What Is a C5 Command Center? Command, Control, Computing, Communications & Citizen Contact',
+    es ? 'C2, C4 y C5: ¿en qué se diferencian?' : 'C2, C4 and C5: what is the difference?',
     es ? 'Un C5 es un centro de Comando, Control, Cómputo, Comunicaciones y Contacto Ciudadano para seguridad pública. Conozca cómo funcionan los centros C5 en México y América Latina con la plataforma K1 de Kabat One.' : 'A C5 is a Command, Control, Computing, Communications, and Citizen Contact center for public safety. Learn how C5 centers operate in Mexico and Latin America with Kabat One\'s K1 platform.',
     es ? 'https://kabatone.com/es/resources/que-es-un-c5' : 'https://kabatone.com/resources/que-es-un-c5',
     '2024-01-15'

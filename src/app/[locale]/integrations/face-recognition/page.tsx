@@ -167,8 +167,8 @@ export default async function FaceRecognitionIntegrationPage({
           __html: JSON.stringify(
             articleSchema(
               es
-                ? 'Integración de Reconocimiento Facial para Seguridad Pública'
-                : 'Facial Recognition Integration for Public Safety',
+                ? 'Reconocimiento Facial: Identificación Biométrica con Privacidad por Diseño'
+                : 'Face Recognition Integration: AI-Powered Biometric Matching',
               es
                 ? 'Cómo Kabat One integra reconocimiento facial para personas buscadas, desaparecidos y monitoreo de multitudes con arquitectura de privacidad por diseño.'
                 : 'How Kabat One integrates facial recognition for wanted persons, missing persons, and crowd monitoring with privacy-by-design architecture.',

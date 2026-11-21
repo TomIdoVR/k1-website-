@@ -169,8 +169,8 @@ export default async function SensorFusionIntegrationPage({
           __html: JSON.stringify(
             articleSchema(
               es
-                ? 'Fusión de Sensores para Seguridad Pública'
-                : 'Sensor Fusion Platform for Public Safety',
+                ? 'Fusión de Sensores: Conciencia Situacional Unificada desde Cada Fuente'
+                : 'Sensor Fusion: Unified Situational Awareness from Every Input',
               es
                 ? 'Cómo Kabat One integra detección de disparos, sensores IoT, datos ambientales y video en una sola vista de conciencia situacional.'
                 : 'How Kabat One fuses gunshot detection, IoT sensors, environmental data, and video into a single situational awareness view.',

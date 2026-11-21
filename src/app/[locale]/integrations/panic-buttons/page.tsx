@@ -167,7 +167,7 @@ export default async function PanicButtonsIntegrationPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(breadcrumbs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify(articleSchema(
-          es ? 'Integración de Botones de Pánico para Seguridad Pública' : 'Panic Button Integration for Public Safety',
+          es ? 'Botones de Pánico: Alerta Silenciosa, Respuesta Inmediata' : 'Panic Buttons: Silent Alert, Immediate Response',
           es ? 'Cómo Kabat One integra botones de pánico físicos y wearables con despacho CAD, video y GIS para respuesta de emergencia en segundos.' : 'How Kabat One integrates physical and wearable panic buttons with CAD dispatch, video, and GIS for emergency response in seconds.',
           es ? 'https://kabatone.com/es/integrations/panic-buttons' : 'https://kabatone.com/integrations/panic-buttons',
           '2026-05-18'

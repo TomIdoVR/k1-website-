@@ -160,7 +160,7 @@ export default async function VsNiceSystemsPage({
   ]
 
   const articleSchemaData = articleSchema(
-    es ? 'Kabat One vs NICE Systems (Qognify) — Comparación de Plataformas de Seguridad Pública' : 'Kabat One vs NICE Systems (Qognify) — Public Safety Platform Comparison',
+    es ? 'Kabat One vs NICE Systems — Gestión de Evidencia vs Operaciones Unificadas' : 'Kabat One vs NICE Systems — Evidence Management vs Unified Operations',
     es
       ? 'Comparación detallada entre Kabat One y NICE Systems/Qognify: despacho CAD, GIS operacional, gestión de video y tráfico para municipios y centros de mando en LATAM.'
       : 'Detailed comparison between Kabat One and NICE Systems/Qognify: CAD dispatch, operational GIS, video management, and traffic for municipalities and command centers.',
