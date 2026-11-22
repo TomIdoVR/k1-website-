@@ -43,14 +43,13 @@ const nextConfig: NextConfig = {
     /* CSP ships in Report-Only first, deliberately.
 
        An enforcing CSP that is even slightly wrong takes out GTM, GA, the
-       Formspree lead POST, or the fonts — silently, in production, on the
+       lead form POST, or the fonts — silently, in production, on the
        launch that this policy is meant to protect. Report-Only applies the
        exact same policy and reports violations without blocking anything, so
        the allowlist can be proven against real traffic first.
 
        The allowlist is built from the hosts actually referenced in src:
-       googletagmanager + google-analytics (GTM/GA4), formspree.io (the lead
-       form's POST target), fonts.googleapis/gstatic (next/font), unpkg and
+       googletagmanager + google-analytics (GTM/GA4), fonts.googleapis/gstatic (next/font), unpkg and
        commondatastorage.googleapis.com (demo/simulator assets), the Webflow
        CDN in images.remotePatterns, and api.github.com.
 
@@ -73,8 +72,8 @@ const nextConfig: NextConfig = {
          page load while quietly dropping every hit. Report-Only caught this
          before it could be enforced; an enforcing policy would have taken out
          analytics in production with no visible symptom. */
-      "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://formspree.io https://api.github.com",
-      "form-action 'self' https://formspree.io",
+      "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://api.github.com",
+      "form-action 'self'",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "object-src 'none'",

@@ -9,6 +9,7 @@ import { Link } from '@/i18n/navigation'
    fires the GA4 generate_lead conversion, so losing it would silently break
    lead attribution. */
 import { trackLead } from '@/lib/analytics'
+import { LEADS_URL, submitLead } from '@/lib/lead-client'
 
 interface SelectOption {
   value: string
@@ -18,6 +19,8 @@ interface SelectOption {
 interface ContactFormProps {
   es: boolean
   campaignSource?: string
+  /** Which lead form this is, for routing and reporting. CadLeadForm passes 'cad'. */
+  formId?: 'contact' | 'cad'
   labels: {
     formTitle: string
     formSub: string
@@ -37,8 +40,6 @@ interface ContactFormProps {
   }
   selectOptions: SelectOption[]
 }
-
-const FORMSPREE_URL = 'https://formspree.io/f/mjganywz'
 
 // Submitted values stay in English so lead routing is consistent across locales
 const REGION_OPTIONS: { value: string; en: string; es: string }[] = [
@@ -70,7 +71,7 @@ const labelStyle: React.CSSProperties = {
   color: 'var(--dim)',
 }
 
-export default function ContactForm({ es, campaignSource, labels, selectOptions }: ContactFormProps) {
+export default function ContactForm({ es, campaignSource, formId = 'contact', labels, selectOptions }: ContactFormProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   /* Set when the browser blocks submission on a required field, so the reason
      is stated in the page and not only in a native bubble — those are easy to
@@ -87,6 +88,10 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
   const cardRef = useRef<HTMLElement | null>(null)
   const headingRef = useRef<HTMLDivElement>(null)
   const invalidHandled = useRef(false)
+  /* When the form appeared, sent as elapsed_ms: a form completed in a couple of
+     seconds is flagged server side as possible spam (flagged, never dropped). */
+  const startedAt = useRef(0)
+  useEffect(() => { startedAt.current = Date.now() }, [])
 
   useEffect(() => {
     if (status !== 'success' && status !== 'error') return
@@ -116,16 +121,16 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
     const formData = new FormData(e.currentTarget)
 
     try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
+      const ok = await submitLead(formData, {
+        form: formId,
+        startedAt: startedAt.current || Date.now(),
+        locale: es ? 'es' : 'en',
       })
 
-      if (res.ok) {
+      if (ok) {
         // Fire GA4 conversion event (reaches GA4 via gtag — see lib/analytics)
         trackLead('generate_lead', {
-          form_id: 'contact',
+          form_id: formId,
           region: String(formData.get('region') || ''),
           interest: String(formData.get('interest') || ''),
           ...(campaignSource ? { campaign_source: campaignSource } : {}),
@@ -193,8 +198,16 @@ export default function ContactForm({ es, campaignSource, labels, selectOptions 
           the query string — and therefore into server and analytics logs — any
           time handleSubmit does not run. handleSubmit still preventDefaults and
           POSTs via fetch on the normal path. */}
-      <form onSubmit={handleSubmit} onInvalidCapture={handleInvalid} method="post" action={FORMSPREE_URL}>
+      <form onSubmit={handleSubmit} onInvalidCapture={handleInvalid} method="post" action={LEADS_URL}>
         {campaignSource && <input type="hidden" name="campaign_source" value={campaignSource} />}
+        {/* For the no-JS path; submitLead sets the same values on the normal path. */}
+        <input type="hidden" name="form" value={formId} />
+        <input type="hidden" name="locale" value={es ? 'es' : 'en'} />
+        {/* Honeypot: hidden from people, so anything filling it is a bot. */}
+        <input
+          type="text" name="company_website" tabIndex={-1} autoComplete="off"
+          aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+        />
         {/* Row 1: Name + Company */}
         <div className="cf-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '18px' }}>
