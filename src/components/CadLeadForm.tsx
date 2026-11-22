@@ -3,7 +3,7 @@ import ContactForm from '@/components/ContactForm'
 /* An on-page lead form for the pages CAD buyers actually land on (CAD inbound plan
    item #3). Spanish C5/911 searchers arrive on resource pages, not the product page,
    and until now the only next step was a link to /contact. This renders the same
-   ContactForm (same Formspree endpoint and generate_lead event) with CAD-specific copy,
+   ContactForm (same site lead endpoint, /api/leads, and generate_lead event) with CAD-specific copy,
    K-Dispatch listed first, and a `source` tag so every lead records the page that
    produced it, in the lead e-mail (hidden field) and in GA4 (campaign_source). */
 
@@ -29,6 +29,7 @@ export default function CadLeadForm({ es, source }: Props) {
       <ContactForm
         es={es}
         campaignSource={source}
+        formId="cad"
         labels={{
           formTitle: es ? 'Hable con el equipo de K-Dispatch' : 'Talk to the K-Dispatch team',
           formSub: es

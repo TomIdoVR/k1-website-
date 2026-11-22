@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { trackLead } from '@/lib/analytics'
+import { submitLead } from '@/lib/lead-client'
 
 interface EbookDownloadFormProps {
   es?: boolean
@@ -45,6 +46,10 @@ export default function EbookDownloadForm({
 }: EbookDownloadFormProps) {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [failed, setFailed] = useState(false)
+  /* Sent as elapsed_ms, a spam signal checked server side (see /api/leads). */
+  const startedAt = useRef(0)
+  useEffect(() => { startedAt.current = Date.now() }, [])
 
   const c = {
     formTitle: es ? 'Descarga Gratuita' : 'Free Download',
@@ -75,14 +80,16 @@ export default function EbookDownloadForm({
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
+    setFailed(false)
     const formData = new FormData(e.currentTarget)
+    formData.set('asset', pdfPath)
     try {
-      const res = await fetch('https://formspree.io/f/xbdzngyq', {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
+      const ok = await submitLead(formData, {
+        form: 'download',
+        startedAt: startedAt.current || Date.now(),
+        locale: es ? 'es' : 'en',
       })
-      if (res.ok) {
+      if (ok) {
         // Lead-magnet download = a lead. Fire to GA4 (see lib/analytics)
         trackLead('generate_lead', {
           form_id: 'ebook_download',
@@ -91,6 +98,10 @@ export default function EbookDownloadForm({
           organization: String(formData.get('organization') || ''),
         })
         setSubmitted(true)
+      } else {
+        /* Before this, a failed submit just stopped the spinner with no word
+           of why, and the visitor left without the file. */
+        setFailed(true)
       }
     } finally {
       setLoading(false)
@@ -199,6 +210,11 @@ export default function EbookDownloadForm({
 
       <form onSubmit={handleSubmit}>
         {source && <input type="hidden" name="campaign_source" value={source} />}
+        {/* Honeypot: hidden from people, so anything filling it is a bot. */}
+        <input
+          type="text" name="company_website" tabIndex={-1} autoComplete="off"
+          aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+        />
         {/* Full Name */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', marginBottom: '16px' }}>
           <label style={labelStyle}>{c.labelName}</label>
@@ -245,6 +261,14 @@ export default function EbookDownloadForm({
             style={inputStyle}
           />
         </div>
+
+        {failed && (
+          <p role="alert" style={{ color: '#f87171', fontSize: '0.85rem', marginBottom: '12px', fontFamily: 'Space Grotesk, sans-serif' }}>
+            {es
+              ? 'Algo salió mal. Intenta de nuevo o escríbenos a info@kabatone.com.'
+              : 'Something went wrong. Please try again or email us at info@kabatone.com.'}
+          </p>
+        )}
 
         {/* Submit */}
         <button

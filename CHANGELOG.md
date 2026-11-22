@@ -1,3 +1,14 @@
+## [v2.450] – 2026-11-22 — Site's own lead form replaces Formspree (draft, needs setup before merge)
+**Changed**
+- New `src/app/api/leads/route.ts`: one endpoint for the contact form, the CAD/C5 lead forms and the gated downloads, following the careers route's pattern. Each lead goes to three independent channels: stored in a Redis list (Upstash via Vercel, `KV_REST_API_URL`/`KV_REST_API_TOKEN`), posted to Slack (`SLACK_LEADS_WEBHOOK_URL`, or `SLACK_LEADS_BOT_TOKEN` + `SLACK_LEADS_CHANNEL`) and emailed through Resend (`RESEND_API_KEY`, `LEADS_FROM_EMAIL`, `LEADS_NOTIFY_EMAILS`), reply-to the lead. Success if any channel accepts; if none does, the full lead is written to the function log as a last resort. Every lead carries the form, page, page tag, locale and first/last-touch attribution.
+- Spam: honeypot field (dropped silently), plus fill time under 2.5 s or more than 3 links flagged as possible spam (still stored and posted, never dropped).
+- `ContactForm`, `CadLeadForm` and `EbookDownloadForm` post to `/api/leads` through `src/lib/lead-client.ts` instead of Formspree (`mjganywz` and `xbdzngyq`). The no-JS fallback posts to the same endpoint and gets a plain thank-you page. The download form now shows an error when a submit fails instead of silently stopping.
+- `next.config.ts`: formspree.io removed from the Report-Only CSP.
+
+**Not changed**
+- The `generate_lead` GA4 event fires exactly as before. The careers route is untouched.
+- None of the new environment variables are set yet, so this must not merge until at least one channel is configured; until then the forms would show their error message.
+
 ## [v2.449] – 2026-11-18 — GEO page checks: Google AI-feature hygiene across the whole sitemap
 **Added**
 - `scripts/geo_page_checks.py`: pass/fail checks on every sitemap URL, reimplementing the Google-rule checks from Auriti-Labs/geo-optimizer-skill (logic only; the package itself was reviewed and not installed: unpinned PyPI auto-updates, single maintainer, and its own 341-page study found its GEO score does not predict Perplexity citations). Checks: G-INDEX (200, no noindex, Googlebot allowed), G-SNIPPET (nosnippet / max-snippet / data-nosnippet share), G-CANONICAL (one absolute self-canonical), G-DATES (no future or inverted JSON-LD dates; visible `<time>` agrees), G-SD-VISIBLE (page-level JSON-LD headline/name visible on the page), G-VIEWPORT, G-SITEMAP, and an injection scan (prompt-injection phrases, large inline-hidden text). Exit 1 on any FAIL, so it can gate CI or the Monday job.
