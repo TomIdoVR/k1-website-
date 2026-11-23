@@ -47,7 +47,7 @@ export default async function NormaTecnica911Page({ params }: { params: Promise<
   ]
 
   const article = articleSchema(
-    es ? 'Norma Técnica 9-1-1: requisitos para el sistema CAD' : "Mexico's 911 Technical Standard: CAD requirements",
+    es ? 'Norma Técnica 9-1-1: lo que exige al CAD' : "Mexico's 911 standard: what it requires of a CAD",
     es ? 'Lista de verificación de los requisitos que la Norma Técnica 9-1-1 v2.0 del SESNSP exige al CAD y al GIS de un centro 911, con el número de cláusula y la pregunta para cada proveedor.' : "Checklist of what the SESNSP's Norma Técnica 9-1-1 v2.0 requires of a 911 center's CAD and GIS, with clause numbers and the question to ask each vendor.",
     'https://kabatone.com' + (es ? '/es/resources/norma-tecnica-911' : '/resources/norma-tecnica-911'),
     '2026-10-29'

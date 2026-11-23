@@ -114,8 +114,8 @@ export default async function BuildRtccImplementationGuidePage({
   /* ── Schema ── */
   const artSchema = articleSchema(
     es
-      ? 'Guía de Implementación de un RTCC para Gobiernos | Kabat One'
-      : 'How to Build a Real-Time Crime Center: RTCC Guide | Kabat One',
+      ? 'Cómo Implementar un Centro de Crimen en Tiempo Real'
+      : 'How to Build a Real-Time Crime Center',
     es
       ? 'Guía paso a paso para planificar e implementar un centro de crimen en tiempo real (RTCC) — requisitos tecnológicos, modelo de personal, fuentes de datos y errores comunes a evitar.'
       : 'Step-by-step guide to planning and implementing a real-time crime center (RTCC) — technology requirements, staffing model, data feeds, vendor selection, and common pitfalls to avoid.',

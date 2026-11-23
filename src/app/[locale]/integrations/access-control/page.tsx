@@ -165,7 +165,7 @@ export default async function AccessControlIntegrationPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             articleSchema(
-              es ? 'Integración de Control de Acceso para Seguridad Pública' : 'Access Control Integration for Public Safety',
+              es ? 'Control de Acceso: Cada Puerta Conectada al Centro de Mando' : 'Access Control Integration: Every Door Connected to Command',
               es
                 ? 'Cómo Kabat One integra sistemas de control de acceso físico con video, despacho CAD y GIS para respuesta automática a violaciones de acceso.'
                 : 'How Kabat One integrates physical access control systems with video, CAD dispatch, and GIS for automatic response to access violations.',
