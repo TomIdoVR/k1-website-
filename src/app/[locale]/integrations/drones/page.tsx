@@ -145,7 +145,7 @@ export default async function DronesIntegrationPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(breadcrumbs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify(articleSchema(
-          es ? 'Integración de Drones (UAV/UAS) para Seguridad Pública' : 'Drone (UAV/UAS) Integration for Public Safety',
+          es ? 'Integración de Drones: El Ojo Aéreo Conectado al Centro de Mando' : 'Drone Integration: Aerial Eye Connected to Command Center',
           es ? 'Cómo Kabat One integra drones con video, despacho CAD y GIS para persecuciones, búsqueda y rescate, y vigilancia aérea en tiempo real.' : 'How Kabat One integrates drones with video, CAD dispatch, and GIS for pursuits, search and rescue, and real-time aerial surveillance.',
           es ? 'https://kabatone.com/es/integrations/drones' : 'https://kabatone.com/integrations/drones',
           '2026-03-20'

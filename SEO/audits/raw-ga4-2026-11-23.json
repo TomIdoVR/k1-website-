@@ -1,0 +1,240 @@
+{
+  "generated": "2026-11-23T00:00:00",
+  "period": "Oct 26 \u2013 Nov 22, 2026",
+  "ga4_property": "properties/530090453",
+  "gsc_property": "https://kabatone.com/",
+  "sources_cur": {
+    "Direct": {
+      "sessions": 2152,
+      "users": 2033,
+      "bounce": 85.3
+    },
+    "Organic Search": {
+      "sessions": 876,
+      "users": 673,
+      "bounce": 44.5
+    },
+    "Referral": {
+      "sessions": 98,
+      "users": 83,
+      "bounce": 69.4
+    },
+    "AI Assistant": {
+      "sessions": 39,
+      "users": 32,
+      "bounce": 43.6
+    },
+    "Organic Social": {
+      "sessions": 23,
+      "users": 22,
+      "bounce": 47.8
+    },
+    "Unassigned": {
+      "sessions": 9,
+      "users": 9,
+      "bounce": 100.0
+    }
+  },
+  "sources_prior": {
+    "Direct": 2013,
+    "Organic Search": 1029,
+    "Referral": 110,
+    "Organic Social": 70,
+    "AI Assistant": 25,
+    "Unassigned": 8
+  },
+  "weekly": [
+    {
+      "week": "36",
+      "year": "2026",
+      "sessions": 582
+    },
+    {
+      "week": "37",
+      "year": "2026",
+      "sessions": 689
+    },
+    {
+      "week": "38",
+      "year": "2026",
+      "sessions": 721
+    },
+    {
+      "week": "39",
+      "year": "2026",
+      "sessions": 658
+    },
+    {
+      "week": "40",
+      "year": "2026",
+      "sessions": 737
+    },
+    {
+      "week": "41",
+      "year": "2026",
+      "sessions": 761
+    },
+    {
+      "week": "42",
+      "year": "2026",
+      "sessions": 804
+    },
+    {
+      "week": "43",
+      "year": "2026",
+      "sessions": 926
+    },
+    {
+      "week": "44",
+      "year": "2026",
+      "sessions": 774
+    },
+    {
+      "week": "45",
+      "year": "2026",
+      "sessions": 985
+    },
+    {
+      "week": "46",
+      "year": "2026",
+      "sessions": 817
+    },
+    {
+      "week": "47",
+      "year": "2026",
+      "sessions": 622
+    },
+    {
+      "week": "48",
+      "year": "2026",
+      "sessions": 83
+    }
+  ],
+  "pages_cur": {
+    "/es": {
+      "sessions": 89,
+      "duration": 1368,
+      "bounce": 39.3
+    },
+    "(not set)": {
+      "sessions": 81,
+      "duration": 2,
+      "bounce": 98.8
+    },
+    "/es/resources/que-es-un-c5": {
+      "sessions": 70,
+      "duration": 123,
+      "bounce": 42.9
+    },
+    "/": {
+      "sessions": 67,
+      "duration": 226,
+      "bounce": 37.3
+    },
+    "/resources/best-cad-dispatch-software": {
+      "sessions": 48,
+      "duration": 62,
+      "bounce": 41.7
+    },
+    "/es/resources/how-c5-command-centers-work": {
+      "sessions": 42,
+      "duration": 102,
+      "bounce": 38.1
+    },
+    "/resources/cctv-video-analytics": {
+      "sessions": 25,
+      "duration": 226,
+      "bounce": 52.0
+    },
+    "/es/resources/what-is-a-command-center": {
+      "sessions": 21,
+      "duration": 215,
+      "bounce": 42.9
+    },
+    "/es/resources/what-is-video-management-software": {
+      "sessions": 21,
+      "duration": 104,
+      "bounce": 52.4
+    },
+    "/resources/best-vms-software": {
+      "sessions": 19,
+      "duration": 65,
+      "bounce": 26.3
+    },
+    "/es/resources/what-is-lpr-license-plate-recognition": {
+      "sessions": 17,
+      "duration": 133,
+      "bounce": 52.9
+    },
+    "/es/k-dispatch": {
+      "sessions": 16,
+      "duration": 98,
+      "bounce": 31.2
+    },
+    "/es/resources/c5-command-centers-mexico-2026": {
+      "sessions": 13,
+      "duration": 309,
+      "bounce": 38.5
+    },
+    "/resources/what-is-cad-dispatch-software": {
+      "sessions": 12,
+      "duration": 266,
+      "bounce": 50.0
+    },
+    "/es/resources/what-is-emergency-management-software": {
+      "sessions": 11,
+      "duration": 232,
+      "bounce": 27.3
+    },
+    "/about": {
+      "sessions": 10,
+      "duration": 354,
+      "bounce": 0.0
+    },
+    "/es/contact": {
+      "sessions": 8,
+      "duration": 189,
+      "bounce": 75.0
+    },
+    "/resources/how-c5-command-centers-work": {
+      "sessions": 8,
+      "duration": 8,
+      "bounce": 75.0
+    },
+    "/es/about": {
+      "sessions": 7,
+      "duration": 583,
+      "bounce": 14.3
+    },
+    "/es/resources/cctv-video-analytics": {
+      "sessions": 7,
+      "duration": 48,
+      "bounce": 71.4
+    },
+    "/es/resources/estadisticas-911-mexico-2026": {
+      "sessions": 7,
+      "duration": 66,
+      "bounce": 57.1
+    },
+    "/es/resources/public-safety-software-peru": {
+      "sessions": 7,
+      "duration": 323,
+      "bounce": 28.6
+    },
+    "/k-dispatch": {
+      "sessions": 7,
+      "duration": 408,
+      "bounce": 28.6
+    },
+    "/vs/prepared911": {
+      "sessions": 7,
+      "duration": 183,
+      "bounce": 28.6
+    },
+    "/es/resources/911-chile-sinaproc": {
+      "sessions": 6,
+      "duration": 178,
+      "bounce": 66.7
+    }
+  }
+}

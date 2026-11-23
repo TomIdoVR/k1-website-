@@ -153,8 +153,8 @@ export default async function LprIntegrationPage({
           __html: JSON.stringify(
             articleSchema(
               es
-                ? 'Integración de Reconocimiento de Placas Vehiculares (LPR)'
-                : 'License Plate Recognition (LPR) Integration',
+                ? 'Reconocimiento de Placas Vehiculares (LPR): Inteligencia Vehicular en Tiempo Real'
+                : 'LPR Integration: Real-Time Vehicle Intelligence',
               es
                 ? 'Cómo Kabat One integra LPR y ALPR en operaciones de seguridad pública. Cotejo en tiempo real con listas de alertas y captura automática de evidencia.'
                 : 'How Kabat One integrates LPR and ALPR into public safety operations. Real-time hot list matching, stolen vehicle alerts, and automatic evidence capture.',
