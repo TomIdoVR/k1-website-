@@ -1,3 +1,28 @@
+## [v2.451] – 2026-11-23 — Playwright smoke tests for the live site
+
+**Added**
+- **`e2e/` Playwright suite (49 tests, about a minute).** The only automated check was
+  `health-check.yml`, which curls `/` and `/es` for a 200 and cannot see a broken hero, a dead form
+  or a lost canonical. The suite covers: 13 key pages × EN/ES (200, `lang`, one visible H1, no
+  uncaught JS errors, no same-origin 4xx/5xx); SEO head on 5 pages (canonical, hreflang
+  en/es/x-default, description, JSON-LD parses, distinct ES canonical) plus `robots.txt`,
+  `llms.txt`, `sitemap.xml` and ~40 sampled sitemap URLs; the contact form (EN, ES, error path,
+  required fields); the two-step careers application with screening questions; header/footer
+  links, language switcher and demo CTA; and mobile (no horizontal scroll, menu opens).
+- Forms are stubbed at the network layer (Formspree and `/api/careers/apply`), so the suite never
+  creates a real lead or application.
+- **`.github/workflows/e2e.yml`** runs the suite after every successful Vercel Preview or
+  Production deployment (against that deployment's URL), nightly at 06:17 UTC against
+  https://www.kabatone.com (scheduled runs only fire from `main`), and on demand. Failures upload
+  the report and traces for 14 days. Optional repo secret `VERCEL_AUTOMATION_BYPASS_SECRET` lets
+  it reach protected previews.
+- Scripts: `npm run test:e2e` (local server), `test:e2e:prod` (live site), `test:e2e:ui`.
+
+**Notes**
+- Ported from `nextjs` (v2.405), where the first Action run passed 48 of 49 and caught a real
+  staging bug: `<html lang>` stays `en` after a client-side language switch. `main` is not
+  affected (it serves `lang` server-side); 49/49 pass against production from this branch.
+- No site code changed; nothing here ships to visitors.
 ## [v2.450] – 2026-11-20 — Article headline now matches the visible H1 on 11 pages (EN + ES)
 **Fixed**
 - Article JSON-LD `headline` on 11 pages (22 EN/ES URLs) now uses the page's own H1 instead of a separately written SEO title: the 6 integration pages (access control, drones, face recognition, LPR, panic buttons, sensor fusion), `resources/build-rtcc-implementation-guide` (also drops "| Kabat One" from the headline), `resources/que-es-un-c5`, `resources/c5-command-centers-mexico-2026`, `resources/norma-tecnica-911` and `vs/nice-systems`. Google's structured-data policy requires markup to describe visible content; these were the 19 G-SD-VISIBLE FAILs in the 11-18 `geo_page_checks.py` baseline (headline and H1 shared under 60% of their words). `<title>` and meta descriptions are unchanged, so search snippets are unaffected. The 77 WARNs (headline = SEO title, close to the H1) are left as they are.
