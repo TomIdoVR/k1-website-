@@ -64,6 +64,13 @@ _SERP_POLLING = {
     # 2026-10-05, verify_serp_polling 09-06 -> 10-03: 1,369 impr, 100% desktop, 0 mobile,
     # 0 clicks, US 1,164 + thin GB/NL/DE/IT/HK. Topped the orchestrator's quick-win list.
     'software for public safety',
+    # 2026-11-23, verify_serp_polling 10-25 -> 11-21: all three 100% desktop, 0 mobile,
+    # 0 clicks, spread over GB/DE/IT/NL with US <2% and no Mexico. 794 / 938 / 368 impr.
+    # The 11-23 orchestrator asked to check four zero-click queries before rewriting
+    # snippets; these three (incl. the Motorola one it wanted rewritten) are the tracker.
+    'motorola solutions alternatives',
+    'milestone ai alternatives',
+    'kabatone alternatives',
 }
 
 
