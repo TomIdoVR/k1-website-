@@ -1,3 +1,24 @@
+## [v2.452] – 2026-11-23 — Weekly SEO + GEO report 2026-11-23; three rank-tracker queries denylisted
+
+**Fixed**
+- **`_SERP_POLLING` in `scripts/seo_weekly_agent.py` gains three queries** (`motorola solutions alternatives`,
+  `milestone ai alternatives`, `kabatone alternatives`). `verify_serp_polling` 10-25 → 11-21: 794 / 938 / 368
+  impressions, 100% desktop, 0 clicks, spread over GB/DE/IT/NL with US under 2% and no Mexico. This morning's
+  orchestrator plan asked to check them before rewriting snippets. They now score `business_value` 0.0, so the
+  Monday plan, the Slack brief and the dashboard stop recommending them. `cctv video analytics` (real, mixed devices)
+  still scores 2.0.
+
+**Added**
+- `SEO/weekly-report-2026-11-23.md`: W47 clicks 125 (W46 165) at flat impressions and positions, read as a demand dip;
+  the orchestrator's C5 title rewrite refuted (would undo v2.428); GEO with Gemini unmeasured (spending cap) and a
+  Perplexity retrieval drop flagged as a likely instrument change. Artifact:
+  https://claude.ai/artifact/9oFQZbATe2azS5UBDtnGJ9
+- `SEO/gsc-fresh-2026-11-23.json`, `SEO/audits/rolling-2026-11-23.json`, `SEO/geo/ai-crawler-history.csv` (W47 row).
+
+**Changed**
+- `SEO/carry-over.md`: OPS-3 (push works again; close after 11-30), GEO-5, AI-2, CAD-2 updated; OPS-5 (Gemini
+  spending cap) opened; SERP-2 closed in this version.
+
 ## [v2.451] – 2026-11-23 — Playwright smoke tests for the live site
 
 **Added**
